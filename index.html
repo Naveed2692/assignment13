@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment13</title>
+</head>
+<body>
+    <!-- Cube Valume find -->
+    <h2>Cube</h2>
+    <label for="">Enter Edge Value of Cube to find Valume</label> 
+    <input type="number" id="number">
+    <button id="btn" onclick="cube()">Calculate</button>
+    <p id="result"></p>
+    <!-- find diameter, circumference and area of circle using functions -->
+     <!-- diameter -->
+    <h2>Diameter,circumference and area of circle</h2>
+    <label for="">Enter Raduis to find Diameter</label>
+    <input type="number" id="diameter">
+    <button onclick="diameter()">Find Diameter</button>
+    <p id="Dia-result"></p>
+    
+    <!-- circumference -->
+    <label for="">Enter Raduis to find circumference</label>
+    <input type="number" id="circumference">
+    <button onclick="circumference()">Find circumference</button>
+    <p id="circum"></p>
+    <!-- circle -->
+    <label for="">Enter Raduis to find circle</label>
+    <input type="number" id="circle">
+    <button onclick="circle()">Find Circle</button>
+    <p id="cir"></p>
+    <!-- Maximum and minimum from two number -->
+    <h2>Maximum and minimum from two number</h2>
+    <label for="">Numbers are : [56,92]</label>
+    <button onclick="minmaxNumber()">Click To fine Min and Max Number</button>
+    <p id="min"></p>
+    <p id="max"></p>
+    <!-- check whether a number is even or odd -->
+    <h2>Check whether a number is even or odd</h2>
+    <label for="">Enter a number</label>
+    <input type="number" id="num">
+    <button onclick="evenOdd()">Find Circle</button>
+    <p id="checknum"></p>
+
+    <script>
+
+function evenOdd(){
+    var input= document.getElementById('num').value;
+    if (input%2 == 0){
+document.getElementById('checknum').innerHTML= 'Input Number is Even: '+ input;
+    }else{
+        document.getElementById('checknum').innerHTML= 'Input Number is Odd: '+ input;
+    }
+};
+     var arr = [56,92];
+     function minmaxNumber(){
+         var min = Math.min(...arr);
+         var max = Math.max(...arr);
+         document.getElementById('min').innerHTML='Manimum Number: '+min;
+         document.getElementById('max').innerHTML='Maximum Number: '+max;
+    }
+     function circle(){
+       var input= document.getElementById('circle');
+    //    aria of circle formula A = πr**2
+       var result =(22/7* input.value**2).toFixed(2);
+       document.getElementById('cir').innerHTML='Circumference: '+ result;
+       };
+       function circumference(){
+       var input= document.getElementById('circumference');
+       var result =(2*22/7* input.value).toFixed(2);
+       document.getElementById('circum').innerHTML='Circumference: '+ result;
+       };
+
+       function cube(){
+        var input= document.getElementById('number');
+       var result = input.value**3;
+       document.getElementById('result').innerHTML='Valume: '+ result;
+       };
+       function diameter(){
+        var input= document.getElementById('diameter');
+       var result = 2*input.value;
+       document.getElementById('Dia-result').innerHTML='Diameter: '+ result;
+       };
+       
+    </script>
+</body>
+</html>
